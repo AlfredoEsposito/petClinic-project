@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @NoArgsConstructor
 @AllArgsConstructor
-public class Persona {
+public class Persona extends BaseEntity{
 
     @Getter @Setter private String nome;
     @Getter @Setter private String cognome;

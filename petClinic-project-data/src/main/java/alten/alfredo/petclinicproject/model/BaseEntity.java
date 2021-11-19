@@ -4,9 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serializable;
+
 @Slf4j
-public class TipoAnimale extends BaseEntity{
+public class BaseEntity implements Serializable {
 
-    @Getter @Setter private String nome;
-
+    @Getter @Setter private Long id;
 }

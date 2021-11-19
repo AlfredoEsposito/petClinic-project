@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.time.LocalDate;
 
 @Slf4j
-public class AnimaleDomestico {
+public class AnimaleDomestico extends BaseEntity{
 
     @Getter @Setter private TipoAnimale tipo;
     @Getter @Setter private Proprietario proprietario;
