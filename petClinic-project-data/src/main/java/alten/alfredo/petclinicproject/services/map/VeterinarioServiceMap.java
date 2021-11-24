@@ -1,11 +1,11 @@
 package alten.alfredo.petclinicproject.services.map;
 
 import alten.alfredo.petclinicproject.model.Veterinario;
-import alten.alfredo.petclinicproject.services.CrudService;
+import alten.alfredo.petclinicproject.services.VeterinarioService;
 
 import java.util.Set;
 
-public class VeterinarioServiceMap extends  AbstractMapService<Veterinario, Long> implements CrudService<Veterinario, Long> {
+public class VeterinarioServiceMap extends  AbstractMapService<Veterinario, Long> implements VeterinarioService {
 
     @Override
     public Veterinario findById(Long id) {
@@ -30,5 +30,10 @@ public class VeterinarioServiceMap extends  AbstractMapService<Veterinario, Long
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Veterinario findByCognome(String cognome) {
+        return null;
     }
 }
