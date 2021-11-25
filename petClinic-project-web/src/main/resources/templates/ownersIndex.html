@@ -2,9 +2,28 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Proprietari</title>
+    <title>Lista dei proprietari</title>
 </head>
 <body>
-    <h1 th:text="'Lista proprietari'">Lista proprietari</h1>
+
+    <h1 th:text="'Lista proprietari degli animali domestici'">Lista proprietari</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>COGNOME</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="proprietario : ${proprietari}">
+            <td th:text="${proprietario.id}"></td>
+            <td th:text="${proprietario.nome}"></td>
+            <td th:text="${proprietario.cognome}"></td>
+        </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>

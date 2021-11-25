@@ -4,7 +4,6 @@ import alten.alfredo.petclinicproject.model.Proprietario;
 import alten.alfredo.petclinicproject.model.Veterinario;
 import alten.alfredo.petclinicproject.services.ProprietarioService;
 import alten.alfredo.petclinicproject.services.VeterinarioService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +13,6 @@ public class DataLoader implements CommandLineRunner {
     private final ProprietarioService proprietarioService;
     private final VeterinarioService veterinarioService;
 
-    @Autowired
     public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService) {
         this.proprietarioService = proprietarioService;
         this.veterinarioService = veterinarioService;
