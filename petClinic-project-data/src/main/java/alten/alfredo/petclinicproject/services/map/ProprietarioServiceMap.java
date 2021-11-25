@@ -32,7 +32,7 @@ public class ProprietarioServiceMap extends AbstractMapService<Proprietario, Lon
 
     @Override
     public Proprietario save(Proprietario proprietario) {
-        return super.save(proprietario.getId(), proprietario);
+        return super.save(proprietario);
     }
 
     @Override

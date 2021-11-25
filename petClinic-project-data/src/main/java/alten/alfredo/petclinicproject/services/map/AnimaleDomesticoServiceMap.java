@@ -31,6 +31,6 @@ public class AnimaleDomesticoServiceMap extends AbstractMapService<AnimaleDomest
 
     @Override
     public AnimaleDomestico save(AnimaleDomestico animale) {
-        return super.save(animale.getId(), animale);
+        return super.save(animale);
     }
 }

@@ -21,7 +21,7 @@ public class VeterinarioServiceMap extends  AbstractMapService<Veterinario, Long
 
     @Override
     public Veterinario save(Veterinario veterinario) {
-        return super.save(veterinario.getId(), veterinario);
+        return super.save(veterinario);
     }
 
     @Override
