@@ -4,8 +4,7 @@ import alten.alfredo.petclinicproject.model.Proprietario;
 import alten.alfredo.petclinicproject.model.Veterinario;
 import alten.alfredo.petclinicproject.services.ProprietarioService;
 import alten.alfredo.petclinicproject.services.VeterinarioService;
-import alten.alfredo.petclinicproject.services.map.ProprietarioServiceMap;
-import alten.alfredo.petclinicproject.services.map.VeterinarioServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +14,13 @@ public class DataLoader implements CommandLineRunner {
     private final ProprietarioService proprietarioService;
     private final VeterinarioService veterinarioService;
 
-    public DataLoader() {
-        this.proprietarioService = new ProprietarioServiceMap();
-        this.veterinarioService = new VeterinarioServiceMap();
+    @Autowired
+    public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService) {
+        this.proprietarioService = proprietarioService;
+        this.veterinarioService = veterinarioService;
     }
+
+    //Questo processo serve a caricare alcuni dati iniziali con cui poter lavorare
 
     @Override
     public void run(String... args) throws Exception {

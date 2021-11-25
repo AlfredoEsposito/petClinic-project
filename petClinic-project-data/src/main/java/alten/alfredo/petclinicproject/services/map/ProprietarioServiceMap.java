@@ -2,9 +2,11 @@ package alten.alfredo.petclinicproject.services.map;
 
 import alten.alfredo.petclinicproject.model.Proprietario;
 import alten.alfredo.petclinicproject.services.ProprietarioService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class ProprietarioServiceMap extends AbstractMapService<Proprietario, Long> implements ProprietarioService {
 
 
