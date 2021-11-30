@@ -1,8 +1,10 @@
 package alten.alfredo.petclinicproject.bootstrap;
 
 import alten.alfredo.petclinicproject.model.Proprietario;
+import alten.alfredo.petclinicproject.model.SpecieAnimale;
 import alten.alfredo.petclinicproject.model.Veterinario;
 import alten.alfredo.petclinicproject.services.ProprietarioService;
+import alten.alfredo.petclinicproject.services.SpecieAnimaleService;
 import alten.alfredo.petclinicproject.services.VeterinarioService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,16 +14,26 @@ public class DataLoader implements CommandLineRunner {
 
     private final ProprietarioService proprietarioService;
     private final VeterinarioService veterinarioService;
+    private final SpecieAnimaleService specieAnimaleService;
 
-    public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService) {
+    public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService, SpecieAnimaleService specieAnimaleService) {
         this.proprietarioService = proprietarioService;
         this.veterinarioService = veterinarioService;
+        this.specieAnimaleService = specieAnimaleService;
     }
 
     //Questo processo serve a caricare alcuni dati iniziali con cui poter lavorare
 
     @Override
     public void run(String... args) throws Exception {
+
+        SpecieAnimale cane = new SpecieAnimale();
+        cane.setSpecie("Cane");
+        SpecieAnimale specie1 = specieAnimaleService.save(cane);
+
+        SpecieAnimale gatto = new SpecieAnimale();
+        gatto.setSpecie("Gatto");
+        SpecieAnimale specie2 = specieAnimaleService.save(gatto);
 
         Proprietario proprietario1 = new Proprietario();
         proprietario1.setNome("Pippo");
