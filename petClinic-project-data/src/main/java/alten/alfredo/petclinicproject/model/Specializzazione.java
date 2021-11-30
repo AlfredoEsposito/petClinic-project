@@ -4,11 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Set;
-
 @Slf4j
-public class Veterinario extends Persona{
+public class Specializzazione extends BaseEntity{
 
-    @Getter @Setter private Set<Specializzazione> specializzazioni;
-
+    @Getter @Setter private String descrizione;
 }
