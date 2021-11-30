@@ -14,7 +14,7 @@ public class VeterinariController {
         this.veterinarioService = veterinarioService;
     }
 
-    @RequestMapping({"/vetsIndex", "/vetsIndex.html"})
+    @RequestMapping({"/vets","/vetsIndex", "/vetsIndex.html"})
     public String veterinari(Model model){
         model.addAttribute("veterinari", veterinarioService.findAll());
         return "vetsIndex";

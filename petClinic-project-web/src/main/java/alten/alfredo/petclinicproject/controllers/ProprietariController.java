@@ -14,7 +14,7 @@ public class ProprietariController {
         this.proprietarioService = proprietarioService;
     }
 
-    @RequestMapping({"/ownersIndex", "/ownersIndex.html"})
+    @RequestMapping({"owners","/ownersIndex", "/ownersIndex.html"})
     public String proprietari(Model model){
         model.addAttribute("proprietari", proprietarioService.findAll());
         return "ownersIndex";
