@@ -9,5 +9,8 @@ import java.util.Set;
 @Slf4j
 public class Proprietario extends Persona{
 
+    @Getter @Setter private String indirizzo;
+    @Getter @Setter private String citta;
+    @Getter @Setter private String numTel;
     @Getter @Setter private Set<AnimaleDomestico> animaliDomestici;
 }
