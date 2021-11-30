@@ -1,13 +1,13 @@
 package alten.alfredo.petclinicproject.services.map;
 
 import alten.alfredo.petclinicproject.model.AnimaleDomestico;
-import alten.alfredo.petclinicproject.services.CrudService;
+import alten.alfredo.petclinicproject.services.AnimaleDomesticoService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class AnimaleDomesticoServiceMap extends AbstractMapService<AnimaleDomestico, Long> implements CrudService<AnimaleDomestico, Long> {
+public class AnimaleDomesticoServiceMap extends AbstractMapService<AnimaleDomestico, Long> implements AnimaleDomesticoService {
 
     @Override
     public AnimaleDomestico findById(Long id) {
