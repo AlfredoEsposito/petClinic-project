@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Slf4j
 public class AnimaleDomestico extends BaseEntity{
 
+    @Getter @Setter private String nome;
     @Getter @Setter private SpecieAnimale specie;
     @Getter @Setter private Proprietario proprietario;
     @Getter @Setter private LocalDate dataNascita;
