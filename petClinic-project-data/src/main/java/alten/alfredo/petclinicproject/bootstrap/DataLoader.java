@@ -1,10 +1,8 @@
 package alten.alfredo.petclinicproject.bootstrap;
 
-import alten.alfredo.petclinicproject.model.AnimaleDomestico;
-import alten.alfredo.petclinicproject.model.Proprietario;
-import alten.alfredo.petclinicproject.model.SpecieAnimale;
-import alten.alfredo.petclinicproject.model.Veterinario;
+import alten.alfredo.petclinicproject.model.*;
 import alten.alfredo.petclinicproject.services.ProprietarioService;
+import alten.alfredo.petclinicproject.services.SpecializzazioneService;
 import alten.alfredo.petclinicproject.services.SpecieAnimaleService;
 import alten.alfredo.petclinicproject.services.VeterinarioService;
 import org.springframework.boot.CommandLineRunner;
@@ -18,18 +16,28 @@ public class DataLoader implements CommandLineRunner {
     private final ProprietarioService proprietarioService;
     private final VeterinarioService veterinarioService;
     private final SpecieAnimaleService specieAnimaleService;
+    private final SpecializzazioneService specializzazioneService;
 
-    public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService, SpecieAnimaleService specieAnimaleService) {
+    public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService, SpecieAnimaleService specieAnimaleService, SpecializzazioneService specializzazioneService) {
         this.proprietarioService = proprietarioService;
         this.veterinarioService = veterinarioService;
         this.specieAnimaleService = specieAnimaleService;
+        this.specializzazioneService = specializzazioneService;
     }
 
     //Questo processo serve a caricare alcuni dati iniziali con cui poter lavorare
 
     @Override
     public void run(String... args) throws Exception {
+        int count = specieAnimaleService.findAll().size();
 
+        if(count == 0){
+            loadData();
+        }
+
+    }
+
+    private void loadData() {
         SpecieAnimale cane = new SpecieAnimale();
         cane.setSpecie("Cane");
         SpecieAnimale specie1 = specieAnimaleService.save(cane);
@@ -37,6 +45,20 @@ public class DataLoader implements CommandLineRunner {
         SpecieAnimale gatto = new SpecieAnimale();
         gatto.setSpecie("Gatto");
         SpecieAnimale specie2 = specieAnimaleService.save(gatto);
+
+        Specializzazione radiologia = new Specializzazione();
+        radiologia.setDescrizione("Radiologia");
+        Specializzazione specializzazione1 = specializzazioneService.save(radiologia);
+
+        Specializzazione chirurgia = new Specializzazione();
+        radiologia.setDescrizione("Chirurgia");
+        Specializzazione specializzazione2 = specializzazioneService.save(chirurgia);
+
+        Specializzazione odontoiatria = new Specializzazione();
+        radiologia.setDescrizione("Odontoiatria");
+        Specializzazione specializzazione3 = specializzazioneService.save(odontoiatria);
+
+        //PROPRIETARI
 
         Proprietario proprietario1 = new Proprietario();
         proprietario1.setNome("Pippo");
@@ -72,17 +94,23 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Proprietari salvati...");
 
+        //VETERINARI
+
         Veterinario veterinario1 = new Veterinario();
         veterinario1.setNome("Romeo");
         veterinario1.setCognome("Guzzi");
+        veterinario1.getSpecializzazioni().add(specializzazione1);
+
         veterinarioService.save(veterinario1);
 
         Veterinario veterinario2 = new Veterinario();
         veterinario2.setNome("Salvatore");
         veterinario2.setCognome("Giordano");
+        veterinario2.getSpecializzazioni().add(specializzazione2);
+        veterinario2.getSpecializzazioni().add(specializzazione3);
+
         veterinarioService.save(veterinario2);
 
         System.out.println("Veterinari salvati...");
-
     }
 }
