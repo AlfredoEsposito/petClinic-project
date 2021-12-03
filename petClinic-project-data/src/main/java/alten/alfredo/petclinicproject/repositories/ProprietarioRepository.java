@@ -4,4 +4,6 @@ import alten.alfredo.petclinicproject.model.Proprietario;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ProprietarioRepository extends CrudRepository<Proprietario, Long> {
+
+    Proprietario findByCognome(String cognome);
 }
