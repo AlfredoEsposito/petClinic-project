@@ -27,7 +27,7 @@ public class VeterinarioServiceMap extends  AbstractMapService<Veterinario, Long
         return super.findAll();
     }
 
-    //Simulazione salvataggio animale domestico con hiberrnate
+    //Simulazione salvataggio specializzazione veterinario con hiberrnate
     @Override
     public Veterinario save(Veterinario veterinario) {
         if(veterinario.getSpecializzazioni().size()>0){
