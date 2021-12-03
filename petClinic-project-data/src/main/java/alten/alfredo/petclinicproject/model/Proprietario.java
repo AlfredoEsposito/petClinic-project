@@ -23,7 +23,7 @@ public class Proprietario extends Persona{
 
     @Getter @Setter
     @Column(name = "numero_telefono")
-    private String numTel;
+    private String numero_telefono;
 
     @Getter @Setter
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "proprietario")

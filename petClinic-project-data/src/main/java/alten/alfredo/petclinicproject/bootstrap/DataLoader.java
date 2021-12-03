@@ -39,11 +39,11 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadData() {
         SpecieAnimale cane = new SpecieAnimale();
-        cane.setNomeSpecie("Cane");
+        cane.setNome_specie("Cane");
         SpecieAnimale specie1 = specieAnimaleService.save(cane);
 
         SpecieAnimale gatto = new SpecieAnimale();
-        gatto.setNomeSpecie("Gatto");
+        gatto.setNome_specie("Gatto");
         SpecieAnimale specie2 = specieAnimaleService.save(gatto);
 
         Specializzazione radiologia = new Specializzazione();
@@ -65,12 +65,12 @@ public class DataLoader implements CommandLineRunner {
         proprietario1.setCognome("Baudo");
         proprietario1.setIndirizzo("Via Garibaldi, 13");
         proprietario1.setCitta("Roma");
-        proprietario1.setNumTel("3471228945");
+        proprietario1.setNumero_telefono("3471228945");
 
         AnimaleDomestico animaleDiPippo = new AnimaleDomestico();
         animaleDiPippo.setSpecie(specie1);
         animaleDiPippo.setNome("Bobby");
-        animaleDiPippo.setDataNascita(LocalDate.now());
+        animaleDiPippo.setData_nascita(LocalDate.now());
         animaleDiPippo.setProprietario(proprietario1);
         proprietario1.getAnimaliDomestici().add(animaleDiPippo);
 
@@ -81,12 +81,12 @@ public class DataLoader implements CommandLineRunner {
         proprietario2.setCognome("Frassica");
         proprietario2.setIndirizzo("Via San Carlo, 52");
         proprietario2.setCitta("Messina");
-        proprietario2.setNumTel("3617790123");
+        proprietario2.setNumero_telefono("3617790123");
 
         AnimaleDomestico animaleDiNino = new AnimaleDomestico();
         animaleDiNino.setSpecie(specie2);
         animaleDiNino.setNome("Fuffy");
-        animaleDiNino.setDataNascita(LocalDate.now());
+        animaleDiNino.setData_nascita(LocalDate.now());
         animaleDiNino.setProprietario(proprietario2);
         proprietario2.getAnimaliDomestici().add(animaleDiNino);
 

@@ -15,9 +15,9 @@ public class SpecieAnimale extends BaseEntity{
 
     @Getter @Setter
     @Column(name = "nome_specie")
-    private String nomeSpecie;
+    private String nome_specie;
 
-    //relazione many to one unidirezionale, l'altro lato della relazione non conosce questo lato,
+    //relazione many to one unidirezionale con AnimaleDomestico, l'altro lato della relazione non conosce questo lato,
     // per cui non verra dichiarato nessun attributo della classe concorrente
 
 

@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Slf4j
 @Entity
@@ -28,6 +30,10 @@ public class AnimaleDomestico extends BaseEntity{
 
     @Getter @Setter
     @Column(name = "data_nascita")
-    private LocalDate dataNascita;
+    private LocalDate data_nascita;
+
+    @Getter @Setter
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "animale_domestico")
+    private Set<Visita> visite = new HashSet<>();
 
 }

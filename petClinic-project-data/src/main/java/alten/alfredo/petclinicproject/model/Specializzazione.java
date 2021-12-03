@@ -17,6 +17,6 @@ public class Specializzazione extends BaseEntity{
     @Column(name = "descrizione")
     private String descrizione;
 
-    //relazione many to many unidirezionale, l'altro lato della relazione non conosce questo lato,
+    //relazione many to many unidirezionale con Veterinario, l'altro lato della relazione non conosce questo lato,
     // per cui non verra dichiarato nessun attributo della classe concorrente
 }
