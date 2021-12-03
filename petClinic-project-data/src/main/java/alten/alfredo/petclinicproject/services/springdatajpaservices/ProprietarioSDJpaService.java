@@ -40,6 +40,12 @@ public class ProprietarioSDJpaService implements ProprietarioService {
 
     @Override
     public Proprietario save(Proprietario object) {
+        System.out.println("#########################");
+        System.out.println("#########################");
+        System.out.println("#########################");
+        System.out.println("#########################");
+        System.out.println("#########################");
+        System.out.println("#########################");
         return proprietarioRepository.save(object);
     }
 

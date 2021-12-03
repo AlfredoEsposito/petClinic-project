@@ -4,11 +4,13 @@ import alten.alfredo.petclinicproject.model.Specializzazione;
 import alten.alfredo.petclinicproject.model.Veterinario;
 import alten.alfredo.petclinicproject.services.SpecializzazioneService;
 import alten.alfredo.petclinicproject.services.VeterinarioService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class VeterinarioServiceMap extends  AbstractMapService<Veterinario, Long> implements VeterinarioService {
 
     private final SpecializzazioneService specializzazioneService;

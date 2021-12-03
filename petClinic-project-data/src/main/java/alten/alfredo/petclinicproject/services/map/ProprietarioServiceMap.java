@@ -5,11 +5,13 @@ import alten.alfredo.petclinicproject.model.Proprietario;
 import alten.alfredo.petclinicproject.services.AnimaleDomesticoService;
 import alten.alfredo.petclinicproject.services.ProprietarioService;
 import alten.alfredo.petclinicproject.services.SpecieAnimaleService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class ProprietarioServiceMap extends AbstractMapService<Proprietario, Long> implements ProprietarioService {
 
     private final SpecieAnimaleService specieAnimaleService;

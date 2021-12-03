@@ -2,11 +2,13 @@ package alten.alfredo.petclinicproject.services.map;
 
 import alten.alfredo.petclinicproject.model.AnimaleDomestico;
 import alten.alfredo.petclinicproject.services.AnimaleDomesticoService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class AnimaleDomesticoServiceMap extends AbstractMapService<AnimaleDomestico, Long> implements AnimaleDomesticoService {
 
     @Override
