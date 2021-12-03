@@ -1,10 +1,7 @@
 package alten.alfredo.petclinicproject.bootstrap;
 
 import alten.alfredo.petclinicproject.model.*;
-import alten.alfredo.petclinicproject.services.ProprietarioService;
-import alten.alfredo.petclinicproject.services.SpecializzazioneService;
-import alten.alfredo.petclinicproject.services.SpecieAnimaleService;
-import alten.alfredo.petclinicproject.services.VeterinarioService;
+import alten.alfredo.petclinicproject.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VeterinarioService veterinarioService;
     private final SpecieAnimaleService specieAnimaleService;
     private final SpecializzazioneService specializzazioneService;
+    private final VisitaService visitaService;
 
-    public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService, SpecieAnimaleService specieAnimaleService, SpecializzazioneService specializzazioneService) {
+    public DataLoader(ProprietarioService proprietarioService, VeterinarioService veterinarioService, SpecieAnimaleService specieAnimaleService, SpecializzazioneService specializzazioneService, VisitaService visitaService) {
         this.proprietarioService = proprietarioService;
         this.veterinarioService = veterinarioService;
         this.specieAnimaleService = specieAnimaleService;
         this.specializzazioneService = specializzazioneService;
+        this.visitaService = visitaService;
     }
 
     //Questo processo serve a caricare alcuni dati iniziali con cui poter lavorare
@@ -91,6 +90,13 @@ public class DataLoader implements CommandLineRunner {
         proprietario2.getAnimaliDomestici().add(animaleDiNino);
 
         proprietarioService.save(proprietario2);
+
+        Visita visitaGatto = new Visita();
+        visitaGatto.setAnimale_domestico(animaleDiNino);
+        visitaGatto.setDataVisita(LocalDate.now());
+        visitaGatto.setDescrizione("Gatto raffreddato");
+
+        visitaService.save(visitaGatto);
 
         System.out.println("Proprietari salvati...");
 
