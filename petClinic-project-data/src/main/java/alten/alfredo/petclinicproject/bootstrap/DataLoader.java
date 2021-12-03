@@ -39,11 +39,11 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadData() {
         SpecieAnimale cane = new SpecieAnimale();
-        cane.setSpecie("Cane");
+        cane.setNomeSpecie("Cane");
         SpecieAnimale specie1 = specieAnimaleService.save(cane);
 
         SpecieAnimale gatto = new SpecieAnimale();
-        gatto.setSpecie("Gatto");
+        gatto.setNomeSpecie("Gatto");
         SpecieAnimale specie2 = specieAnimaleService.save(gatto);
 
         Specializzazione radiologia = new Specializzazione();

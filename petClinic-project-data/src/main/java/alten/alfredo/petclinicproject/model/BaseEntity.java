@@ -9,9 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
-
+//l'annotazione @MappedSuperclass definisce una classe le cui informazioni di mappatura
+// vengono ereditate da tutte le entità che la estendono //IMPORTANTE : la classe non sarà una tabella nel db
 @Slf4j
-@MappedSuperclass  //l'annotazione @MappedSuperclass definisce una classe le cui informazioni di mappatura vengono ereditate da tutte le entità che la estendono
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
     @Id
