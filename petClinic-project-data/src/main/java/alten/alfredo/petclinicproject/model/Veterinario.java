@@ -1,19 +1,22 @@
 package alten.alfredo.petclinicproject.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Slf4j
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "veterinario")
 public class Veterinario extends Persona{
 
-    @Getter @Setter
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "specializzazioni_veterinario",
                joinColumns = @JoinColumn(name = "id_veterinario"),

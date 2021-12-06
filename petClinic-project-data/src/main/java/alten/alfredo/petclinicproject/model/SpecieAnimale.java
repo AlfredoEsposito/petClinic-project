@@ -1,19 +1,22 @@
 package alten.alfredo.petclinicproject.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Slf4j
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "specie_animale")
 public class SpecieAnimale extends BaseEntity{
 
-    @Getter @Setter
     @Column(name = "nome_specie")
     private String nome_specie;
 

@@ -2,13 +2,11 @@ package alten.alfredo.petclinicproject.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Slf4j
 @Entity
 @Table(name = "specializzazione")
 public class Specializzazione extends BaseEntity{

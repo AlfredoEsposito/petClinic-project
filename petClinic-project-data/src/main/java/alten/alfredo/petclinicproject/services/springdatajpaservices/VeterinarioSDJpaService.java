@@ -40,6 +40,7 @@ public class VeterinarioSDJpaService implements VeterinarioService {
 
     @Override
     public Veterinario save(Veterinario object) {
+        System.out.println("Sono nel metodo save del Service Veterinario sdjpa");
         return veterinarioRepository.save(object);
     }
 
