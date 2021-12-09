@@ -1,9 +1,6 @@
 package alten.alfredo.petclinicproject.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -28,4 +25,15 @@ public class Proprietario extends Persona{
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "proprietario")
     private Set<AnimaleDomestico> animaliDomestici = new HashSet<>();
+
+    @Builder
+    public Proprietario(Long id, String nome, String cognome, String indirizzo, String citta, String numero_telefono, Set<AnimaleDomestico> animaliDomestici) {
+        super(id, nome, cognome);
+        this.indirizzo = indirizzo;
+        this.citta = citta;
+        this.numero_telefono = numero_telefono;
+        if(animaliDomestici!=null){
+            this.animaliDomestici = animaliDomestici;
+        }
+    }
 }

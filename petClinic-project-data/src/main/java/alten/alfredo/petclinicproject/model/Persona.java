@@ -23,5 +23,9 @@ public class Persona extends BaseEntity{
     @Column(name = "cognome")
     private String cognome;
 
-
+    public Persona(Long id, String nome, String cognome) {
+        super(id);
+        this.nome = nome;
+        this.cognome = cognome;
+    }
 }

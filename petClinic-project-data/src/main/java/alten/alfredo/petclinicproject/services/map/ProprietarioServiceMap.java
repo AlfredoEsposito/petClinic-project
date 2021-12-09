@@ -69,6 +69,7 @@ public class ProprietarioServiceMap extends AbstractMapService<Proprietario, Lon
 
     @Override
     public Proprietario findByCognome(String cognome) {
-        return null;
+        return this.findAll().stream().filter(proprietario -> proprietario.getCognome().
+                equalsIgnoreCase(cognome)).findFirst().orElse(null);
     }
 }
