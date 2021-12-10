@@ -4,7 +4,7 @@ import alten.alfredo.petclinicproject.services.ProprietarioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+@RequestMapping("/proprietari")
 @Controller
 public class ProprietariController {
 
@@ -14,9 +14,10 @@ public class ProprietariController {
         this.proprietarioService = proprietarioService;
     }
 
-    @RequestMapping({"owners","/ownersIndex", "/ownersIndex.html"})
-    public String proprietari(Model model){
+    @RequestMapping({"/ownersIndex", "/ownersIndex.html"})
+    public String mostraProprietari(Model model){
         model.addAttribute("proprietari", proprietarioService.findAll());
-        return "ownersIndex";
+        return "proprietari/ownersIndex";
     }
 }
+

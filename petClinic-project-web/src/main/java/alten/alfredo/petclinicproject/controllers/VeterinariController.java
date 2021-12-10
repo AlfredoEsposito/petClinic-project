@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@RequestMapping("/veterinari")
 @Controller
 public class VeterinariController {
 
@@ -14,9 +15,9 @@ public class VeterinariController {
         this.veterinarioService = veterinarioService;
     }
 
-    @RequestMapping({"/vets","vets.html", "/vetsIndex", "/vetsIndex.html"})
+    @RequestMapping({ "/vetsIndex", "/vetsIndex.html"})
     public String veterinari(Model model){
         model.addAttribute("veterinari", veterinarioService.findAll());
-        return "vetsIndex";
+        return "veterinari/vetsIndex";
     }
 }
